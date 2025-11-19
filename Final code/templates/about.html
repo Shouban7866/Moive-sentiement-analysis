@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About MovieSent</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <a href="{{ url_for('index') }}" class="logo">MovieSent</a>
+        <div class="nav-links">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('about') }}" class="active">About</a>
+        </div>
+    </nav>
+</header>
+
+<main class="container about-content">
+    <div class="card">
+
+        <h2>About MovieSent</h2>
+
+        <p>
+            <strong>MovieSent</strong> is a movie review sentiment analysis project that uses
+            Machine Learning and Deep Learning to classify reviews as
+            <strong>Positive</strong> or <strong>Negative</strong>.
+            The goal of this project is to show how text data can be analyzed using AI.
+        </p>
+
+        <h2>How the Project Was Created</h2>
+        <p>
+            This project was built step-by-step using simple and commonly used AI techniques.
+            Here is a short explanation of how the system was created:
+        </p>
+
+        <h3>1. Collecting Movie Reviews</h3>
+        <p>
+            The project started with collecting a dataset of movie reviews
+            where each review had a sentiment label (positive or negative).
+        </p>
+
+        <h3>2. Cleaning and Preparing the Text</h3>
+        <p>
+            Before training any model, all reviews were cleaned using basic NLP steps such as:
+        </p>
+        <ul>
+            <li>removing HTML tags</li>
+            <li>converting text to lowercase</li>
+            <li>removing stopwords</li>
+            <li>tokenization</li>
+            <li>lemmatization</li>
+        </ul>
+
+        <h3>3. Training Two Different Models</h3>
+        <p>
+            To make the system powerful, two AI models were trained:
+        </p>
+        <ul>
+            <li><strong>Logistic Regression (ML Model):</strong> trained using TF-IDF features.</li>
+            <li><strong>LSTM Neural Network (Deep Learning Model):</strong> trained using token sequences.</li>
+        </ul>
+
+        <h3>4. Building the Web Application</h3>
+        <p>
+            After training the models, a simple and fast web application was created using Flask.
+            The user writes a review → text is preprocessed → selected model predicts the sentiment instantly.
+        </p>
+
+        <h2>Benefits of This Project</h2>
+        <ul>
+            <li><strong>Real-time Analysis:</strong> Users get instant sentiment predictions.</li>
+            <li><strong>High Accuracy:</strong> Uses both ML & Deep Learning for better results.</li>
+            <li><strong>Educational Value:</strong> Great example of how NLP and AI work together.</li>
+            <li><strong>User-Friendly:</strong> Clean and easy-to-use web interface.</li>
+            <li><strong>Practical Application:</strong> Can be extended to product reviews, social media posts, feedback systems, etc.</li>
+            <li><strong>Lightweight Web App:</strong> Can run on any computer with Python.</li>
+            <li><strong>Shows Full AI Pipeline:</strong> From data cleaning to model training to deployment.</li>
+        </ul>
+
+        <h2>Conclusion</h2>
+        <p>
+            MovieSent is a simple, effective, and complete AI project that demonstrates
+            how text sentiment analysis works in real life using modern machine learning techniques.
+        </p>
+
+        <p>© 2025 MovieSent | Developed by [Your Name Here]</p>
+
+    </div>
+</main>
+
+<footer>
+    <p>© 2025 MovieSent | Developed by [MUHAMMAD SHOUBAN ALI]</p>
+</footer>
+
+</body>
+</html>
+
+
+
+

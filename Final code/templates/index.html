@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieSent - AI Sentiment Analysis</title>
+    <!-- CSS Link Fix: Using url_for('static', filename='style.css') to ensure Flask finds the file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- Header / Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <a href="{{ url_for('index') }}" class="logo">MovieSent</a>
+            <div class="nav-links">
+                <a href="{{ url_for('index') }}" class="active">Home</a>
+                <a href="{{ url_for('about') }}">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section (Matches s1.jpg) -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>MovieSent</h1>
+            <p>Analyze Movie Reviews with AI – Logistic Regression & LSTM Models</p>
+            <a href="#review-form" class="btn">Analyze a Review</a>
+        </div>
+    </section>
+
+    <!-- Main Content - Review Form and Results (Matches s2.PNG) -->
+    <main class="container">
+        <div class="card" id="review-form">
+            <h2>Enter Your Movie Review</h2>
+
+            <!-- Flask Form - Posts back to the index route -->
+            <form method="POST" action="{{ url_for('index') }}">
+                <div class="form-group">
+                    <textarea name="review" placeholder="Write your review here..." required></textarea>
+                </div>
+
+                <!-- Model Selection -->
+                <div class="form-group model-selection">
+                    <label>Select Model:</label>
+                    <input type="radio" id="logistic" name="model" value="logistic" checked>
+                    <label for="logistic">Logistic Regression</label>
+
+                    <input type="radio" id="lstm" name="model" value="lstm">
+                    <label for="lstm">LSTM</label>
+                </div>
+
+                <button type="submit" class="btn" style="width: 100%;">Analyze Sentiment</button>
+            </form>
+
+            <!-- Sentiment Result Display -->
+            {% if sentiment %}
+                <div class="result-box {% if sentiment == 'Negative' %}negative{% endif %}">
+                    The predicted sentiment is: {{ sentiment }}
+                </div>
+            {% endif %}
+
+        </div>
+
+        <!-- How MovieSent Works Section -->
+        <section class="how-it-works">
+            <h2>How MovieSent Works</h2>
+            <div class="step-grid">
+
+                <div class="card step-card">
+                    <h3>Step 1</h3>
+                    <p>Input your movie review and select the model (Logistic Regression or LSTM).</p>
+                </div>
+
+                <div class="card step-card">
+                    <h3>Step 2</h3>
+                    <p>Preprocessing: HTML cleaning, tokenization, stopword removal, and lemmatization are performed on the text.</p>
+                </div>
+
+                <div class="card step-card">
+                    <h3>Step 3</h3>
+                    <p>The selected model predicts the sentiment as Positive or Negative instantly.</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 MovieSent | Developed by [MUHAMMAD SHOUBAN ALI]</p>
+    </footer>
+
+</body>
+</html>
+
+
+
+
